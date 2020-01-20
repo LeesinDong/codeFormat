@@ -33,7 +33,7 @@ public class Main {
         StringBuilder stringBuilder = new StringBuilder();
         String[] fileSplit = fileString.split("\\`\\`\\`");
         String[] codeSplit = codeString.split("\\`\\`\\`");
-        for (int i = 0; i < fileSplit.length; i++) {
+        for (int i = 0; i < codeSplit.length; i++) {
             String fileSplitTheOne = fileSplit[i];
             String codeSplitTheOne = codeSplit[i];
             //排除没有```的

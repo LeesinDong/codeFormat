@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class FormJava extends FormCommon{
     public static String format(String code) throws Exception {
-         code = formJava(code);
+        code = formJava(code);
         return code;
     }
 
@@ -231,9 +231,13 @@ public class FormJava extends FormCommon{
                         String NumberOfSpaces = getStack(stack, true);
                         if ("".equals(NumberOfSpaces)) {
                             //这里说明是结尾的}，多加一个回车，分割方法
-                            result.append(line+"\n\n");
+                            if (i == arr.length-1) {
+                                //如果已经是最后一个{的话，不多加回车
+                                result.append(line+"\n");
+                            } else {
+                                result.append(line+"\n\n");
+                            }
                         } else {
-                            result.append(NumberOfSpaces + line + "\n");
                         }
                     } else {
                         String NumberOfSpaces = getStack(stack, false);
