@@ -44,9 +44,23 @@ public class FormJava extends FormCommon{
         }
         if (dataTmp == null)
             return data;
+        data = removeEndEnter(data);
         return dataTmp;
     }
     
+    /**
+     * @description: 去掉代码末尾的回车
+     * @name: removeEndEnter  
+     * @return: void
+     * @date: 2020/1/20 11:22 下午
+     * @auther: leesin
+    *
+     * @param dataTmp*/
+    private static String removeEndEnter(String data) {
+        String substring = data.substring(0, data.lastIndexOf("\n")+1);
+        return substring;
+    }
+
     /**
      * @description: 格式化Xml，已作废，有好的轮子，不往下写了
      * @name: formXml  
