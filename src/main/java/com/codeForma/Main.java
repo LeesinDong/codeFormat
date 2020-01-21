@@ -37,7 +37,7 @@ public class Main {
             String fileSplitTheOne = fileSplit[i];
             String codeSplitTheOne = codeSplit[i];
             //排除没有```的
-            if (fileSplitTheOne.startsWith("java")) {
+            if (fileSplitTheOne.startsWith("java")||fileSplitTheOne.startsWith("js")) {
                 String code = codeSplitTheOne.substring(4);
                 code = FormJava.format(code);
                 stringBuilder.append("```java\n"+code+"```");
